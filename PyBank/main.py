@@ -19,3 +19,4 @@ with open('budget_data.csv') as csvfile:
 
     print(f"Total Months: {monthcounter}")
     print(f"Total: {totalcounter}")
+    print("This is a test")
