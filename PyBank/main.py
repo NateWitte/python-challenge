@@ -3,7 +3,8 @@ import os
 import csv
 
 #Create variables
-rowcounter=0
+monthcounter=0
+totalcounter=0
 #Since it is already in our "PyBank" folder, we can just open it
 with open('budget_data.csv') as csvfile:
 
@@ -13,6 +14,8 @@ with open('budget_data.csv') as csvfile:
     print(f"CSV Header: {csv_header}")
 
     for row in csvreader:
-        rowcounter=rowcounter+1
+        monthcounter=monthcounter+1
+        totalcounter=totalcounter + float(row[1])
 
-    print(f"Number of rows: {rowcounter}")
+    print(f"Total Months: {monthcounter}")
+    print(f"Total: {totalcounter}")
