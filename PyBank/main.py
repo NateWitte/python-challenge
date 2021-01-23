@@ -34,7 +34,9 @@ with open('budget_data.csv') as csvfile:
                 mindifmonth = row[0]
         previoustotal = currentvalue
 
+    averagedifference=totaldifference/(monthcounter-1)
     print(f"Total Months: {monthcounter}")
     print(f"Total: {totalcounter}")
-    print(f"Average Difference: {totaldifference/(monthcounter-1)}")
-    print("This is a test")
+    print(f"Average Difference: {averagedifference}")
+    print(f"Max difference was {maxdifference} on {maxdifmonth}")
+    print(f"Min difference was {mindifference} on {mindifmonth}")
