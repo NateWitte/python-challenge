@@ -4,7 +4,7 @@ import csv
 
 #Variables
 votecount = 0
-votedcandidates = []
+votedcandidates = {}
 with open('election_data.csv') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
@@ -15,16 +15,13 @@ with open('election_data.csv') as csvfile:
     for row in csvreader:
         votecount=votecount+1
         candidate = row[2]
-        newcandidate = True
-        for people in votedcandidates:
-            if candidate == people:
-                newcandidate = False
-        
-        if newcandidate == True:
-            votedcandidates.append(candidate)
+        if not candidate in votedcandidates:
+            votedcandidates[candidate]=1
+        else:
+            votedcandidates[candidate]+=1
 
 for i in votedcandidates:
-    print(f"{i}")
+    print(f"{i} received {votedcandidates[i]} votes")
 
 
 print(f"Total number of votes: {votecount}")
