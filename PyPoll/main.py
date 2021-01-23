@@ -10,7 +10,6 @@ with open('election_data.csv') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
 
     for row in csvreader:
         votecount=votecount+1
@@ -20,8 +19,18 @@ with open('election_data.csv') as csvfile:
         else:
             votedcandidates[candidate]+=1
 
+print("Election Results")
+print("-------------------------")
+print(f"Total Votes: {votecount}")
+print("-------------------------")
+winner="None"
+mostvotes=0
 for i in votedcandidates:
-    print(f"{i} received {votedcandidates[i]} votes")
-
-
-print(f"Total number of votes: {votecount}")
+    if votedcandidates[i]>mostvotes:
+        mostvotes=votedcandidates[i]
+        winner = i
+    thiscandidate=i
+    votes = votedcandidates[i]
+    percentage = (votes/votecount)*100
+    percentage = round(percentage,3)
+    print(f"{i}: {percentage}% ({votedcandidates[i]})")
