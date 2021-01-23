@@ -34,3 +34,6 @@ for i in votedcandidates:
     percentage = (votes/votecount)*100
     percentage = round(percentage,3)
     print(f"{i}: {percentage}% ({votedcandidates[i]})")
+print("-------------------------")
+print(f"Winner: {winner}")
+print("-------------------------")
