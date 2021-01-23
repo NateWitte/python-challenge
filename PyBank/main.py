@@ -17,7 +17,6 @@ with open('budget_data.csv') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
 
     for row in csvreader:
         currentvalue = float(row[1])
