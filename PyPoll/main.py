@@ -1,6 +1,10 @@
-print("Hello from PyPoll")
+#Need to import os and csv
+import os
+import csv
 
-a=27
-b=22
-print(f"Here's the value of a: {a}")
-print(f"And Here's the value of b: {b}")
+with open('election_data.csv') as csvfile:
+
+    csvreader = csv.reader(csvfile, delimiter=',')
+
+    csv_header = next(csvreader)
+    print(f"CSV Header: {csv_header}")
