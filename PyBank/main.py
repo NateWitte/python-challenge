@@ -35,8 +35,13 @@ with open('budget_data.csv') as csvfile:
         previoustotal = currentvalue
 
     averagedifference=totaldifference/(monthcounter-1)
-    print(f"Total Months: {monthcounter}")
-    print(f"Total: {totalcounter}")
-    print(f"Average Difference: {averagedifference}")
-    print(f"Max difference was {maxdifference} on {maxdifmonth}")
-    print(f"Min difference was {mindifference} on {mindifmonth}")
+#Output to Terminal
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months: {monthcounter}")
+print(f"Total: ${round(totalcounter)}")
+print(f"Average Change: ${round(averagedifference,2)}")
+print(f"Greatest Increase in Profits: {maxdifmonth} (${round(maxdifference)})")
+print(f"Greatest Decrease in Profits: {mindifmonth} (${round(mindifference)})")
+
+
