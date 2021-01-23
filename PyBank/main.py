@@ -44,4 +44,13 @@ print(f"Average Change: ${round(averagedifference,2)}")
 print(f"Greatest Increase in Profits: {maxdifmonth} (${round(maxdifference)})")
 print(f"Greatest Decrease in Profits: {mindifmonth} (${round(mindifference)})")
 
-
+#Output to TxT file
+text_file = open("FinancialAnalysis.txt", "w")
+text_file.write("Financial Analysis\n")
+text_file.write("----------------------------\n")
+text_file.write(f"Total Months: {monthcounter}\n")
+text_file.write(f"Total: ${round(totalcounter)}\n")
+text_file.write(f"Average Change: ${round(averagedifference,2)}\n")
+text_file.write(f"Greatest Increase in Profits: {maxdifmonth} (${round(maxdifference)})\n")
+text_file.write(f"Greatest Decrease in Profits: {mindifmonth} (${round(mindifference)})\n")
+text_file.close()
